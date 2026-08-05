@@ -164,7 +164,20 @@ h1{
   margin-bottom:22px;
 }
 h1 .zero{color:var(--orange);}
-.letter{font-size:18.5px;line-height:1.58;color:#C7D2E4;}
+.letter{font-size:18.5px;line-height:1.58;color:#C7D2E4;max-height:max-content;transition:max-height .5s ease;}
+.letter.clamped{
+  max-height:calc(1.58em * 4);overflow:hidden;
+  -webkit-mask-image:linear-gradient(180deg,#000 calc(1.58em * 2),transparent calc(1.58em * 4));
+  mask-image:linear-gradient(180deg,#000 calc(1.58em * 2),transparent calc(1.58em * 4));
+}
+.readmore{
+  display:inline-block;margin-top:14px;
+  font-family:var(--mono);font-size:12px;font-weight:500;color:var(--orange);
+  background:rgba(238,111,30,.12);border:1px solid rgba(238,111,30,.35);border-radius:999px;
+  padding:8px 16px;cursor:pointer;
+}
+.readmore:hover{background:rgba(238,111,30,.2);}
+@media(prefers-reduced-motion:reduce){.letter{transition:none;}}
 .letter strong{color:#fff;}
 @media(prefers-reduced-motion:no-preference){
   .rise{opacity:0;transform:translateY(12px);animation:rise .6s cubic-bezier(.2,.7,.3,1) forwards;}
@@ -211,6 +224,8 @@ h1 .zero{color:var(--orange);}
 .sec.panel{background:var(--panel);}
 .label{font-family:var(--mono);font-size:12.5px;font-weight:500;letter-spacing:.05em;color:var(--orange-deep);margin-bottom:16px;}
 h2{font-weight:500;letter-spacing:-.016em;color:var(--ink);font-size:clamp(26px,3.6vw,38px);line-height:1.12;margin-bottom:22px;max-width:26ch;}
+.dek{font-size:16.5px;line-height:1.5;color:var(--ink-3);max-width:56ch;margin:-10px 0 30px;}
+#act .dek{color:var(--lt-3);}
 h3{font-size:19px;font-weight:600;letter-spacing:-.01em;color:var(--ink);margin:36px 0 12px;}
 .subhead{font-size:clamp(23px,2.9vw,30px);font-weight:500;letter-spacing:-.015em;margin:44px 0 16px;padding-top:36px;border-top:1px solid var(--line);}
 .sec p{margin-bottom:16px;max-width:68ch;color:var(--ink-2);}
@@ -453,7 +468,8 @@ footer a:hover{color:var(--orange);}
 
 @media print{
   *,*::before,*::after{color:#000!important;background:#fff!important;text-shadow:none!important;box-shadow:none!important;}
-  .top,.cue,.btns,.card-go,.mapwrap,.menu-btn{display:none!important;}
+  .top,.cue,.btns,.card-go,.mapwrap,.menu-btn,.readmore{display:none!important;}
+  .letter{max-height:none!important;-webkit-mask-image:none!important;mask-image:none!important;}
   body{font-size:12pt;}
   a{text-decoration:none;}
 }
@@ -553,7 +569,8 @@ footer a:hover{color:var(--orange);}
   <div class="wrap">
     <p class="chip rise d1"><span class="dot"></span> 5 devices active · North Canton, OH</p>
     <h1 class="rise d2">5 Flock surveillance devices are here in North Canton. <span class="zero">Zero people voted for them.</span></h1>
-    <p class="letter voice rise d3"><strong>Hey neighbor, I'm Joshua.</strong> This website exists only to inform you about the Flock Surveillance situation in our community. You can ignore it, you can not care, that's your right. I just want you to be aware. There are 5 Flock cameras in North Canton that are capturing and logging the details and movements of every car that drives past. Nobody voted on them. Not the public. Not City Council. The cameras belong to a private company in Atlanta who is contractually allowed to use anonymized data from our cameras to train AI (even if we cancel the contract). Our movements are being shared with 1,900+ agencies, Federal and State, all over the country, without our permission.</p>
+    <p class="letter voice rise d3" id="letter"><strong>Hey neighbor, I'm Joshua.</strong> This website exists only to inform you about the Flock Surveillance situation in our community. You can ignore it, you can not care, that's your right. I just want you to be aware. There are 5 Flock cameras in North Canton that are capturing and logging the details and movements of every car that drives past. Nobody voted on them. Not the public. Not City Council. The cameras belong to a private company in Atlanta who is contractually allowed to use anonymized data from our cameras to train AI (even if we cancel the contract). Our movements are being shared with 1,900+ agencies, Federal and State, all over the country, without our permission.</p>
+    <p class="rise d3"><button class="readmore" type="button" hidden aria-expanded="false" aria-controls="letter">read the rest</button></p>
 
     <ul class="cards rise d4">
       <li><a class="card" href="#approved">
@@ -606,6 +623,7 @@ footer a:hover{color:var(--orange);}
   <div class="wrap">
     <p class="label">who approved them</p>
     <h2>Three signatures, four years ago</h2>
+    <p class="dek">From a sales call to a five year contract, with no public meeting in between.</p>
 
     <ul class="ledger">
       <li>
@@ -661,6 +679,7 @@ footer a:hover{color:var(--orange);}
   <div class="wrap">
     <p class="label">what they cost</p>
     <h2>$51,167.81 so far</h2>
+    <p class="dek">Four payments so far, about $25,000 still committed, and it renews itself unless somebody stops it.</p>
 
     <table class="money">
       <thead><tr><th scope="col">Year</th><th scope="col">Paid</th><th scope="col">What for</th></tr></thead>
@@ -685,6 +704,7 @@ footer a:hover{color:var(--orange);}
   <div class="wrap">
     <p class="label">who owns the data</p>
     <h2>On paper the City owns it. In practice it controls almost none of it.</h2>
+    <p class="dek">Five questions, five No's, straight from the paperwork.</p>
     <p>The contract is clear on ownership: "all right, title and interest in the Agency Data, belong to and are retained solely by Agency." <a class="tab" href="https://drive.google.com/file/d/1lEPiwT8Wr5cJ6HZI8LxSTfKb_kIskJn1/view" target="_blank" rel="noopener noreferrer">contract</a> Here is what that gets us.</p>
 
     <ul class="owns">
@@ -728,6 +748,7 @@ footer a:hover{color:var(--orange);}
   <div class="wrap">
     <p class="label">why I think you should care</p>
     <h2>Where you've been doesn't stay in North Canton</h2>
+    <p class="dek">1,920 organizations can search what our five cameras capture, and Ohio cities are hitting the brakes.</p>
     <p>Flock's own product calls it "license plate location history." The department's network export, dated June 2026, lists <strong>1,944 organizations</strong>. North Canton's network is shared with <strong>1,920 of them</strong>. <a class="tab" href="https://drive.google.com/file/d/1cDKKPGBGGXLGNExNahMNPbwKSxNQubRY/view" target="_blank" rel="noopener noreferrer">the raw file</a></p>
     <p>Names in that file reference more than forty states. State police in New York, Indiana and Idaho. The Ohio Attorney General's office. Drug task forces. Campus police from Philadelphia to Virginia. Four entries carry Flock's own <strong>[Federal]</strong> label:</p>
 
@@ -763,6 +784,7 @@ footer a:hover{color:var(--orange);}
   <div class="wrap">
     <p class="label">common questions</p>
     <h2>The questions I had too</h2>
+    <p class="dek">Straight answers, sourced from the contracts.</p>
 
     <div class="faq">
       <details name="faq">
@@ -817,6 +839,7 @@ footer a:hover{color:var(--orange);}
   <div class="wrap">
     <p class="label">the exit clause</p>
     <h2>It ends with one letter</h2>
+    <p class="dek">No lawsuit, no buyout, no penalty. Thirty days' written notice before the term ends.</p>
     <p>The contract doesn't have to be broken, bought out, or fought over. There's an easy out, written into the contract itself.</p>
 
     <blockquote class="pull">"This Agreement will automatically renew … unless either Party gives the other Party notice of non-renewal at least thirty (30) days prior to the end of the then-current term."</blockquote>
@@ -831,6 +854,7 @@ footer a:hover{color:var(--orange);}
   <div class="wrap">
     <p class="label">what we can do</p>
     <h2>Two things, easiest first</h2>
+    <p class="dek">Ten minutes total: send this to a neighbor, send one email to City Council.</p>
 
     <ol class="steps">
       <li>
@@ -857,6 +881,7 @@ footer a:hover{color:var(--orange);}
   <div class="wrap">
     <p class="label">all the receipts</p>
     <h2>Every document, unedited</h2>
+    <p class="dek">Ninety five files, free to read. Don't take my word for anything.</p>
     <p>I filed a public records request on June 19, 2026 under Ohio's Public Records Act. <strong>The City answered in four business days.</strong> Everything it released is here: contracts, invoices, purchase orders, emails, the policy, the sharing lists. Credit where it's due, the person who handled my request was fast and helpful.</p>
     <p>The emails are unwrapped so they open, every file has a searchable text copy, and there's a short guide. Ninety five files in all.</p>
     <div class="btns">
@@ -938,6 +963,16 @@ document.querySelectorAll("[data-copy],[data-copy-from]").forEach(function(b){
     else{legacy();}
   });
 });
+(function(){
+  var L=document.getElementById("letter"), rb=document.querySelector(".readmore");
+  if(!L||!rb)return;
+  L.classList.add("clamped"); rb.hidden=false;
+  rb.addEventListener("click",function(){
+    L.classList.remove("clamped");
+    rb.setAttribute("aria-expanded","true");
+    rb.parentNode.removeChild(rb);
+  });
+})();
 window.addEventListener("beforeprint",function(){
   document.querySelectorAll(".faq details").forEach(function(d){
     if(!d.open){d.setAttribute("data-print-opened","");d.open=true;}
