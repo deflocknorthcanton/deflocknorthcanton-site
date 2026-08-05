@@ -1,0 +1,14 @@
+# Deflock North Canton — fact sheet
+
+North Canton, Ohio (Stark County) has 5 Flock Safety license plate cameras (ALPRs).
+
+- Signed November 2022 by the Director of Administration. No ordinance, public meeting, or City Council vote; the contract fell under the dollar threshold requiring Council approval (City's written statement, June 25, 2026).
+- Renewed December 2023 for five years: $12,500/year, $62,500 total, running to 2028, then auto-renewing for two-year terms unless either party gives 30 days' written notice of non-renewal.
+- Paid so far: $51,167.81 across four payments (2023-2026), all from the city budget.
+- The department's June 2026 network export lists 1,944 organizations; North Canton's network is shared with 1,920 of them. Four entries carry Flock's own [Federal] label.
+- The contract lets Flock use anonymized data to train machine learning algorithms, during and after the term. It bars Flock from selling the data.
+- The City does not host the data, does not set the retention clock (NCPD Policy 428.4), and does not own the cameras.
+
+Author: Joshua Sauder, North Canton resident. Corrections: joshua@deflocknorthcanton.com
+Site: https://deflocknorthcanton.com/
+Records (95 files, public): https://drive.google.com/drive/folders/18HdEla0uu28zklagGjp9FCeAqcrBHJWo
