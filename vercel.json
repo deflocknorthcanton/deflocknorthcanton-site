@@ -28,7 +28,7 @@
           "value": "deflocknorthcanton.vercel.app"
         }
       ],
-      "destination": "https://deflocknorthcanton.com/$1",
+      "destination": "https://www.deflocknorthcanton.com/$1",
       "permanent": true
     },
     {
@@ -36,10 +36,10 @@
       "has": [
         {
           "type": "host",
-          "value": "www.deflocknorthcanton.com"
+          "value": "deflocknorthcanton.com"
         }
       ],
-      "destination": "https://deflocknorthcanton.com/$1",
+      "destination": "https://www.deflocknorthcanton.com/$1",
       "permanent": true
     }
   ]
