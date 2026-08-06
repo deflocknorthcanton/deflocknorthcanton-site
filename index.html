@@ -293,16 +293,26 @@ h3{font-size:19px;font-weight:600;letter-spacing:-.01em;color:var(--ink);margin:
 .upcoming i{font-style:normal;font-family:var(--mono);font-size:19px;font-weight:500;color:var(--ink);letter-spacing:-.01em;}
 .upcoming .open{background:var(--orange-fill);border-color:rgba(238,111,30,.32);}
 .upcoming .open b{color:var(--orange-deep);}
-.upcoming .open i{color:var(--orange-deep);display:flex;align-items:center;gap:8px;}
+.upcoming .open i{color:var(--orange-deep);}
+.upcoming .open{position:relative;padding-right:40px;}
 .info{
-  flex:0 0 auto;width:18px;height:18px;border-radius:50%;padding:0;cursor:pointer;
+  position:absolute;top:10px;right:10px;
+  width:19px;height:19px;border-radius:50%;padding:0;cursor:pointer;
   font-family:var(--mono);font-size:11px;font-weight:600;line-height:1;
-  color:var(--orange-deep);background:transparent;border:1.5px solid rgba(238,111,30,.5);
+  color:var(--orange-deep);background:transparent;border:1.5px solid rgba(238,111,30,.45);
+  transition:background .15s ease,color .15s ease,border-color .15s ease;
 }
 .info:hover,.info[aria-expanded="true"]{background:var(--orange-deep);border-color:var(--orange-deep);color:#fff;}
 .upcoming .note{
-  font-size:13px;line-height:1.45;color:var(--ink-2);
-  border-top:1px solid rgba(238,111,30,.25);margin-top:10px;padding-top:10px;
+  position:absolute;bottom:calc(100% + 10px);right:-1px;z-index:5;
+  width:min(280px,78vw);
+  font-size:13px;line-height:1.5;color:var(--lt);
+  background:var(--dark);border:1px solid var(--line-dark);border-radius:10px;
+  padding:12px 14px;box-shadow:0 12px 28px rgba(12,22,38,.28);
+}
+.upcoming .note::after{
+  content:"";position:absolute;top:100%;right:16px;
+  border:6px solid transparent;border-top-color:var(--dark);
 }
 .money .total .amt{color:var(--orange-deep);font-size:16px;}
 .tagline{font-size:clamp(20px,2.7vw,26px);font-weight:500;letter-spacing:-.018em;color:var(--orange-deep);margin-top:30px;}
@@ -498,13 +508,14 @@ footer a:hover{color:var(--orange);}
 @media print{
   *,*::before,*::after{color:#000!important;background:#fff!important;text-shadow:none!important;box-shadow:none!important;}
   .top,.cue,.btns,.card-go,.mapwrap,.menu-btn,.readmore,.info{display:none!important;}
-  .upcoming .note{display:block!important;}
+  .upcoming .note{display:block!important;position:static!important;width:auto!important;box-shadow:none!important;margin-top:10px;}
+  .upcoming .note::after{display:none!important;}
   .letter{max-height:none!important;-webkit-mask-image:none!important;mask-image:none!important;}
   body{font-size:12pt;}
   a{text-decoration:none;}
 }
 </style>
-<noscript><style>.menu-btn,button[data-copy],button[data-copy-from],.info{display:none}.upcoming .note{display:block!important}</style></noscript>
+<noscript><style>.menu-btn,button[data-copy],button[data-copy-from],.info{display:none}.upcoming .note{display:block!important;position:static!important;width:auto!important;box-shadow:none!important;margin-top:10px}.upcoming .note::after{display:none}</style></noscript>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://www.deflocknorthcanton.com/#website", "url": "https://www.deflocknorthcanton.com/", "name": "Deflock North Canton"}, {"@type": "WebPage", "@id": "https://www.deflocknorthcanton.com/#webpage", "url": "https://www.deflocknorthcanton.com/", "isPartOf": {"@id": "https://www.deflocknorthcanton.com/#website"}, "name": "5 Flock surveillance cameras are here in North Canton. Zero people voted for them.", "description": "North Canton, Ohio has 5 Flock Safety license plate cameras. Nobody voted for them, not the public, not City Council. A neighbor's public records project: every contract, invoice, and email, linked.", "inLanguage": "en", "datePublished": "2026-08-05", "dateModified": "2026-08-05", "author": {"@id": "https://www.deflocknorthcanton.com/#joshua"}, "primaryImageOfPage": {"@type": "ImageObject", "url": "https://www.deflocknorthcanton.com/og.png"}}, {"@type": "Person", "@id": "https://www.deflocknorthcanton.com/#joshua", "name": "Joshua Sauder", "email": "mailto:joshua@deflocknorthcanton.com", "homeLocation": {"@type": "Place", "name": "North Canton, Ohio"}}, {"@type": "FAQPage", "@id": "https://www.deflocknorthcanton.com/#faq", "mainEntity": [{"@type": "Question", "name": "Don't these cameras help catch criminals?", "acceptedAnswer": {"@type": "Answer", "text": "Sometimes, genuinely. Stolen cars, missing people. This isn't about whether our police are good or bad. $51,167.81 for five surveillance devices we don't own, on a system we don't control, shared with nineteen hundred organizations, part of a national network, all decided without one public meeting… isn't worth renewing. You might read the same records and land somewhere else. That's fair."}}, {"@type": "Question", "name": "Has anyone at North Canton PD broken the rules?", "acceptedAnswer": {"@type": "Answer", "text": "Not that I've found. I read every document the City gave me and found no evidence anyone at North Canton PD has misused this system. What I can tell you is what the system has allowed elsewhere. The Electronic Frontier Foundation reviewed 12 million Flock searches across 3,900 agencies. They found searches tied to protests, searches using ethnic slurs, and a Texas deputy who searched 83,000 cameras looking for a woman who'd had an abortion. Separate reporting has tracked officers using it on women: a Georgia police chief was arrested after women seeking protective orders said he used Flock to follow them, a Tennessee officer was indicted on 23 counts, and a Missouri officer ran one woman's plate nearly 400 times. That happened in departments that were also confident it wouldn't."}}, {"@type": "Question", "name": "Don't the audit logs prevent misuse?", "acceptedAnswer": {"@type": "Answer", "text": "Flock's system logs every search with a stated reason, and our department's policy calls for logging every access and auditing regularly. But every case of abuse also happened in a system with audit logs. Logs record misuse after the fact, and somebody has to read them. In Dayton the searches ran for years before anyone noticed, and the audit took months more. 7,100 in all."}}, {"@type": "Question", "name": "How long does Flock keep the data?", "acceptedAnswer": {"@type": "Answer", "text": "The order form says 30 days, and the 2022 contract made it a promise: \"Flock will automatically delete Footage older than thirty (30) days.\" But deleted doesn't mean gone. The same contract lets Flock \"store deleted Footage in order to comply with certain legal obligations,\" retrievable only with a court order, and with no time limit stated anywhere. And the terms in force today aren't in the contract at all. They live on a Flock web page, rewritten in February 2026, two years after we signed. That version contains no promise to delete anything."}}, {"@type": "Question", "name": "Aren't there only five cameras?", "acceptedAnswer": {"@type": "Answer", "text": "Five here. But the surveillance network is the product. North Canton's devices feed a system our department shares with nineteen hundred other organizations, and hundreds of theirs feed back. Dane County, Wisconsin had twenty four devices shared with more than a hundred and forty agencies. They cut Flock anyway."}}, {"@type": "Question", "name": "Do we even own the cameras?", "acceptedAnswer": {"@type": "Answer", "text": "No. \"Flock Hardware shall remain the personal property of Flock.\" After $51,167.81 the City owns none of them. The flip side is good news: when the contract ends, Flock takes them down at no cost to us."}}, {"@type": "Question", "name": "Where are the five cameras?", "acceptedAnswer": {"@type": "Answer", "text": "The City's records include site maps showing all five locations, one map per site. Flock drew up the placement plan back in 2022, and the maps in the records show where the five ended up. I'd rather point you at the originals than redraw them."}}]}]}
 </script>
@@ -731,9 +742,8 @@ footer a:hover{color:var(--orange);}
       <li><b>2028</b><i>$12,500</i></li>
       <li class="open">
         <b>2029+ Auto Renew</b>
-        <i>Price Unknown
-          <button class="info" type="button" aria-label="Why the price is unknown" aria-expanded="false">i</button>
-        </i>
+        <i>Price Unknown</i>
+        <button class="info" type="button" aria-label="Why the price is unknown" aria-expanded="false">i</button>
         <span class="note" hidden>The $12,500 rate is a five year price lock that runs out with the 2028 payment. Nothing in either signed contract says what 2029 and beyond cost.</span>
       </li>
     </ul>
