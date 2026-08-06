@@ -283,10 +283,17 @@ h3{font-size:19px;font-weight:600;letter-spacing:-.01em;color:var(--ink);margin:
 .money tr:last-child td{border-bottom:none;}
 .money .amt{font-family:var(--mono);font-size:14.5px;font-weight:500;color:var(--ink);}
 .money .total td{background:var(--panel);font-weight:600;color:var(--ink);}
-.money .sub td{background:var(--panel);font-weight:500;color:var(--ink-2);}
-.money .sub .amt{color:var(--ink);}
-.money .ahead td{color:var(--ink-3);}
-.money .ahead .amt{color:var(--ink-3);font-weight:400;}
+.uplabel{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);margin:26px 0 10px;}
+.upcoming{list-style:none;display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:0 0 22px;}
+.upcoming li{
+  flex:1 1 150px;display:flex;flex-direction:column;gap:4px;
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 18px;
+}
+.upcoming b{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);}
+.upcoming i{font-style:normal;font-family:var(--mono);font-size:19px;font-weight:500;color:var(--ink);letter-spacing:-.01em;}
+.upcoming .open{background:var(--orange-fill);border-color:rgba(238,111,30,.32);}
+.upcoming .open b{color:var(--orange-deep);}
+.upcoming .open i{color:var(--orange-deep);}
 .money .total .amt{color:var(--orange-deep);font-size:16px;}
 .tagline{font-size:clamp(20px,2.7vw,26px);font-weight:500;letter-spacing:-.018em;color:var(--orange-deep);margin-top:30px;}
 
@@ -694,7 +701,7 @@ footer a:hover{color:var(--orange);}
   <div class="wrap">
     <p class="label">what they cost</p>
     <h2>$51,167.81 so far</h2>
-    <p class="dek">$51,167.81 paid, $25,000 still committed, and after 2028 it renews itself two years at a time.</p>
+    <p class="dek">$51,167.81 paid, about $25,000 still committed, and after 2028 it renews itself two years at a time.</p>
 
     <table class="money">
       <thead><tr><th scope="col">Year</th><th scope="col">Paid</th><th scope="col">What for</th></tr></thead>
@@ -703,13 +710,16 @@ footer a:hover{color:var(--orange);}
       <tr><td>2024</td><td class="amt">$11,917.81</td><td>year 1 of the five year deal</td></tr>
       <tr><td>2025</td><td class="amt">$12,500.00</td><td>year 2</td></tr>
       <tr><td>2026</td><td class="amt">$12,500.00</td><td>year 3</td></tr>
-      <tr class="sub"><td>Paid so far</td><td class="amt">$51,167.81</td><td></td></tr>
-      <tr class="ahead"><td>2027</td><td class="amt">$12,500.00</td><td>year 4, not yet paid</td></tr>
-      <tr class="ahead"><td>2028</td><td class="amt">$12,500.00</td><td>year 5, not yet paid</td></tr>
-      <tr class="sub"><td>Still committed</td><td class="amt">$25,000.00</td><td></td></tr>
-      <tr class="total"><td>Through 2028</td><td class="amt">$76,167.81</td><td></td></tr>
+      <tr class="total"><td>Total paid</td><td class="amt">$51,167.81</td><td></td></tr>
       </tbody>
     </table>
+
+    <p class="uplabel">Upcoming</p>
+    <ul class="upcoming">
+      <li><b>2027</b><i>$12,500</i></li>
+      <li><b>2028</b><i>$12,500</i></li>
+      <li class="open"><b>Beyond</b><i>renews</i></li>
+    </ul>
 
     <p>Straight from the City's own payment ledger <a class="tab" href="https://drive.google.com/file/d/1kr3r5gmUIlvDGX_fxmDx39tLNEG_n-8l/view" target="_blank" rel="noopener noreferrer">ledger</a>, Flock's invoices, and the four purchase orders. <a class="tab" href="https://drive.google.com/file/d/1YChDQtRnL7SEXLtCpXQwQQYhIMHfRPOq/view" target="_blank" rel="noopener noreferrer">POs</a> Every dollar from the city budget.</p>
     <p>The last two payments haven't happened yet. <strong>After 2028 it doesn't end, it renews itself two years at a time</strong>, unless somebody gives thirty days' notice. <a class="tab" href="https://drive.google.com/file/d/1kr_FERUUGvVT1w2ByLqpln-1p6Jua2TL/view" target="_blank" rel="noopener noreferrer">renewal</a></p>
