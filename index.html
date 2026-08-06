@@ -333,12 +333,12 @@ h3{font-size:19px;font-weight:600;letter-spacing:-.01em;color:var(--ink);margin:
 .stamps li{font-family:var(--mono);font-size:12.5px;font-weight:500;color:var(--ink-2);background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:8px 13px;line-height:1.4;}
 .stamps b{color:var(--orange-deep);}
 .cities{list-style:none;padding:0;margin:14px 0 0;}
-.cities li{padding:16px 0;border-top:1px solid var(--line);font-size:15.5px;color:var(--ink-2);max-width:76ch;position:relative;}
+.cities li{padding:16px 0 16px 22px;border-top:1px solid var(--line);font-size:15.5px;color:var(--ink-2);max-width:76ch;position:relative;}
 
-.cities li::before{content:"";position:absolute;left:-20px;top:calc(16px + .825em - 3.8px);width:7px;height:7px;border-radius:50%;background:var(--line);}
+.cities li::before{content:"";position:absolute;left:0;top:calc(16px + .825em - 3.8px);width:7px;height:7px;border-radius:50%;background:var(--line);}
 .cities .oh::before{background:var(--orange);}
 .cities li.oh::after{
-  content:"";position:absolute;left:-20px;top:calc(16px + .825em - 3.8px);
+  content:"";position:absolute;left:0;top:calc(16px + .825em - 3.8px);
   width:7px;height:7px;border-radius:50%;border:1px solid var(--orange);opacity:0;
 }
 @media(prefers-reduced-motion:no-preference){
@@ -349,7 +349,6 @@ h3{font-size:19px;font-weight:600;letter-spacing:-.01em;color:var(--ink);margin:
   .cities li.oh:nth-child(4)::after{animation-delay:1.2s}
   @keyframes cityping{0%{transform:scale(.6);opacity:.5}45%{transform:scale(3.2);opacity:0}100%{transform:scale(3.2);opacity:0}}
 }
-@media(max-width:960px){.cities li{padding-left:18px;}.cities li::before{left:0;}.cities li.oh::after{left:0;}}
 .cities strong{font-weight:600;color:var(--ink);}
 .punch{font-size:clamp(25px,3.4vw,33px);font-weight:400;letter-spacing:-.01em;color:var(--ink);margin-top:38px;max-width:30ch;line-height:1.35;}
 .punch em{color:var(--orange-deep);}
@@ -803,7 +802,7 @@ footer a:hover{color:var(--orange);}
 <section class="sec" id="care">
   <div class="wrap">
     <p class="label">why I think you should care</p>
-    <h2>Where you've been doesn't stay in North Canton</h2>
+    <h2>Where you've been doesn't stay in&nbsp;North&nbsp;Canton</h2>
     <p class="dek">1,920 organizations can search what our five cameras capture, and Ohio cities are hitting the brakes.</p>
     <p>Flock's own product calls it "license plate location history." The department's network export, dated June 2026, lists <strong>1,944 organizations</strong>. North Canton's network is shared with <strong>1,920 of them</strong>. <a class="tab" href="https://drive.google.com/file/d/1cDKKPGBGGXLGNExNahMNPbwKSxNQubRY/view" target="_blank" rel="noopener noreferrer">the raw file</a></p>
     <p>Names in that file reference more than forty states. State police in New York, Indiana and Idaho. The Ohio Attorney General's office. Drug task forces. Campus police from Philadelphia to Virginia. Four entries carry Flock's own <strong>[Federal]</strong> label:</p>
@@ -964,7 +963,7 @@ footer a:hover{color:var(--orange);}
     <p><a class="email-copy" href="mailto:joshua@deflocknorthcanton.com" data-copy="joshua@deflocknorthcanton.com" data-copy-msg="Copied to clipboard!" aria-live="polite">joshua@deflocknorthcanton.com</a></p>
     <p>Everything on this page is either a public document you can open yourself, or my opinion at the time of writing. Opinions can change. The documents don't.</p>
     <p>This site doesn't track you. No analytics, no cookies. Felt appropriate.</p>
-    <p class="foot-meta">deflocknorthcanton.com · North Canton, Stark County, Ohio · <a href="https://drive.google.com/drive/folders/18HdEla0uu28zklagGjp9FCeAqcrBHJWo" target="_blank" rel="noopener noreferrer">records folder</a> · published August 5, 2026</p>
+    <p class="foot-meta">deflocknorthcanton.com · North Canton, Stark County, Ohio · <a href="https://drive.google.com/drive/folders/18HdEla0uu28zklagGjp9FCeAqcrBHJWo" target="_blank" rel="noopener noreferrer">records folder</a> · published August 5, 2026 · updated August 6, 2026</p>
   </div>
 </footer>
 
