@@ -30,6 +30,17 @@
       ],
       "destination": "https://deflocknorthcanton.com/$1",
       "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.deflocknorthcanton.com"
+        }
+      ],
+      "destination": "https://deflocknorthcanton.com/$1",
+      "permanent": true
     }
   ]
 }
