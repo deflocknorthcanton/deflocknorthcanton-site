@@ -983,9 +983,9 @@ document.querySelectorAll("[data-copy],[data-copy-from]").forEach(function(b){
   if(!L||!rb)return;
   L.classList.add("clamped"); rb.hidden=false;
   rb.addEventListener("click",function(){
-    L.classList.remove("clamped");
-    rb.setAttribute("aria-expanded","true");
-    rb.hidden=true;
+    var open=L.classList.toggle("clamped")===false;
+    rb.setAttribute("aria-expanded",open?"true":"false");
+    rb.textContent=open?"close":"read more";
     L.setAttribute("tabindex","-1");
     L.focus({preventScroll:true});
   });
