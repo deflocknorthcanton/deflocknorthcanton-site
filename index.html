@@ -404,26 +404,27 @@ footer a:hover{color:var(--orange);}
 
 
 
-/* wide screens: five sites live in the side gutters, clear of the text column */
+/* wide screens: five sites in the side gutters, unmasked so each glow stays concentric */
 .gsite{display:none;}
-@media(min-width:1200px){
+.gsites{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+@media(min-width:1360px){
   .site-glow,.site-ring,.site-dots{display:none;}
   .gsite{display:block;position:absolute;width:7px;height:7px;border-radius:50%;background:rgba(238,111,30,.75);}
-  .gsite::before{content:"";position:absolute;inset:-120px;border-radius:50%;
+  .gsite::before{content:"";position:absolute;inset:-96px;border-radius:50%;
     background:radial-gradient(circle,rgba(238,111,30,.24),rgba(238,111,30,.07) 45%,transparent 70%);}
   .gsite::after{content:"";position:absolute;inset:0;border-radius:50%;border:1px solid rgba(238,111,30,.5);opacity:0;}
-  .gsite:nth-child(2){left:max(40px,calc(50% - 620px));top:12%;}
-  .gsite:nth-child(3){left:max(90px,calc(50% - 690px));top:47%;}
-  .gsite:nth-child(4){left:max(55px,calc(50% - 580px));top:76%;}
-  .gsite:nth-child(5){right:max(70px,calc(50% - 600px));top:22%;}
-  .gsite:nth-child(6){right:max(40px,calc(50% - 670px));top:61%;}
+  .gsite:nth-child(1){left:max(100px,calc(50% - 610px));top:14%;}
+  .gsite:nth-child(2){left:max(100px,calc(50% - 680px));top:46%;}
+  .gsite:nth-child(3){left:max(100px,calc(50% - 570px));top:74%;}
+  .gsite:nth-child(4){right:max(100px,calc(50% - 590px));top:22%;}
+  .gsite:nth-child(5){right:max(100px,calc(50% - 660px));top:60%;}
   @media(prefers-reduced-motion:no-preference){
     .gsite::after{animation:gping 5.4s ease-out infinite;}
-    .gsite:nth-child(2)::after{animation-delay:.3s}
-    .gsite:nth-child(3)::after{animation-delay:2.2s}
-    .gsite:nth-child(4)::after{animation-delay:3.6s}
-    .gsite:nth-child(5)::after{animation-delay:1.3s}
-    .gsite:nth-child(6)::after{animation-delay:4.4s}
+    .gsite:nth-child(1)::after{animation-delay:.3s}
+    .gsite:nth-child(2)::after{animation-delay:2.2s}
+    .gsite:nth-child(3)::after{animation-delay:3.6s}
+    .gsite:nth-child(4)::after{animation-delay:1.3s}
+    .gsite:nth-child(5)::after{animation-delay:4.4s}
   }
 }
 @keyframes gping{0%{transform:scale(1);opacity:.55}45%{transform:scale(4.5);opacity:0}100%{transform:scale(4.5);opacity:0}}
@@ -574,8 +575,8 @@ footer a:hover{color:var(--orange);}
         </g>
       </g>
     </svg>
-    <span class="gsite"></span><span class="gsite"></span><span class="gsite"></span><span class="gsite"></span><span class="gsite"></span>
   </div>
+  <div class="gsites" aria-hidden="true"><span class="gsite"></span><span class="gsite"></span><span class="gsite"></span><span class="gsite"></span><span class="gsite"></span></div>
   <div class="wrap">
     <p class="chip rise d1"><span class="dot"></span> 5 cameras active · North Canton, OH</p>
     <h1 class="rise d2">5 Flock surveillance cameras are here in North Canton. <span class="zero">Zero people voted for them.</span></h1>
