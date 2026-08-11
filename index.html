@@ -170,7 +170,7 @@ h1{
   font-size:clamp(36px,5.6vw,58px);line-height:1.08;
   margin-bottom:22px;
 }
-h1 .zero{color:var(--orange);}
+h1 .zero{color:var(--orange);display:block;}
 .letter{font-size:18.5px;line-height:1.58;color:#C7D2E4;max-height:max-content;transition:max-height .5s ease;overflow:hidden;}
 .letter.clamped{
   max-height:calc(1.58em * 4);overflow:hidden;
@@ -612,7 +612,7 @@ footer a:hover{color:var(--orange);}
   <div class="wrap">
     <p class="chip rise d1"><span class="dot"></span> 5 cameras active · North Canton, OH</p>
     <h1 class="rise d2">5 Flock surveillance cameras are here in North Canton. <span class="zero">Zero people voted for them.</span></h1>
-    <p class="letter voice rise d3" id="letter"><strong>Hey neighbor, I'm Joshua.</strong> This website exists only to inform you about the Flock Surveillance situation in our community. You can ignore it, you can not care, that's your right. I just want you to be aware. There are 5 Flock license plate cameras in North Canton that are capturing and logging the details and movements of every car that drives past. Nobody voted on them. Not the public. Not City Council. The cameras belong to Flock Safety, a private company in Atlanta who is contractually allowed to use anonymized data from our cameras to train AI (even if we cancel the contract). Our movements are being shared with 1,900+ agencies, Federal and State, all over the country, without our permission.</p>
+    <p class="letter voice rise d3" id="letter"><strong>Hey neighbor, I'm Joshua.</strong> This website exists only to inform you about the Flock Surveillance situation in our community. You can ignore it, you can not care, that's your right. I just want you to be aware. There are 5 Flock license plate cameras in North Canton that are capturing and logging the details and movements of every car that drives past. Nobody voted on them. Not the public. Not City Council. The cameras belong to Flock Safety, a private company in Atlanta <a class="tab" href="https://en.wikipedia.org/wiki/Flock_Safety" target="_blank" rel="noopener noreferrer">who they are</a> who is contractually allowed to use anonymized data from our cameras to train AI (even if we cancel the contract). Our movements are being shared with 1,900+ agencies, Federal and State, all over the country, without our permission.</p>
     <p class="rise d3"><button class="readmore" type="button" hidden aria-expanded="false" aria-controls="letter">read more</button></p>
 
     <ul class="cards rise d4">
@@ -784,6 +784,11 @@ footer a:hover{color:var(--orange);}
         <span class="why">the signed renewal doesn't contain its own legal terms. It points to a page on Flock's website, and Flock rewrote that page in February 2026, two years after we signed</span>
       </li>
       <li>
+        <span class="q">Can a resident request the data itself?</span>
+        <span class="no">NO</span>
+        <span class="why">a public records request reaches what the City keeps. My request produced the contracts, invoices and policy. None of the data from the cameras was included, because the City doesn't hold it</span>
+      </li>
+      <li>
         <span class="q">Do Flock's rights end when the contract does?</span>
         <span class="no">NO</span>
         <span class="why">rights run "during and after the Term hereof" · §4.5</span>
@@ -791,6 +796,7 @@ footer a:hover{color:var(--orange);}
     </ul>
 
     <p>Our police department wrote it in its own automated license plate reader (ALPR) policy manual. It does not hold this data and does not set the clock on it. The company does. <a class="tab" href="https://drive.google.com/file/d/18tag5TyR8Xi6txN8vxHgvBjeyqzII_WF/view" target="_blank" rel="noopener noreferrer">policy</a></p>
+    <p>That last one is worth sitting with. Ohio's Public Records Act is how I got everything on this page, and it only reaches records the City keeps. The movements our cameras log sit with a private company in Atlanta, where that law doesn't reach.</p>
 
     <div class="aside">
       <p><strong>And they can train AI on it.</strong> §4.5 lets Flock anonymize what our devices collect and use it "including the training of machine learning algorithms," under a right that runs "during and after the Term hereof." We can stop paying, the devices can come down, and that part continues. To be fair: the same contract bars Flock from selling it, three separate times. <a class="tab" href="https://drive.google.com/file/d/1lEPiwT8Wr5cJ6HZI8LxSTfKb_kIskJn1/view" target="_blank" rel="noopener noreferrer">contract</a></p>
