@@ -416,6 +416,45 @@ h3{font-size:19px;font-weight:600;letter-spacing:-.01em;color:var(--ink);margin:
 .btn.ghost:hover{border-color:var(--ink);background:#fff;color:var(--ink);}
 .quiet{font-size:14px;color:var(--ink-3);}
 
+
+/* ——— news ——— */
+#news{background:var(--dark);color:var(--lt);padding:68px 0;position:relative;}
+#news::before{
+  content:"";position:absolute;inset:0;
+  background:
+    repeating-linear-gradient(0deg,rgba(255,255,255,.032) 0 1px,transparent 1px 26px),
+    repeating-linear-gradient(90deg,rgba(255,255,255,.032) 0 1px,transparent 1px 26px);
+  -webkit-mask-image:radial-gradient(120% 90% at 50% 30%,#000 40%,transparent 96%);
+  mask-image:radial-gradient(120% 90% at 50% 30%,#000 40%,transparent 96%);
+}
+#news .wrap{position:relative;}
+#news .label{color:var(--orange);}
+#news h2{color:#fff;}
+#news .dek{color:var(--lt-3);}
+.news{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:12px;grid-template-columns:repeat(2,1fr);}
+@media(max-width:720px){.news{grid-template-columns:1fr;}}
+.news a{
+  display:flex;flex-direction:column;gap:8px;height:100%;
+  background:var(--dark-card);border:1px solid var(--line-dark);border-radius:var(--r);
+  padding:18px 20px;text-decoration:none;
+  transition:border-color .15s ease,transform .15s ease;
+}
+.news a:hover{border-color:rgba(238,111,30,.45);transform:translateY(-1px);}
+.news .src{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--orange);}
+.news .hed{font-size:16px;line-height:1.35;color:#fff;font-weight:500;}
+.news .when{margin-top:auto;padding-top:6px;font-family:var(--mono);font-size:11.5px;color:var(--lt-3);}
+.news li[hidden]{display:none;}
+.pager{display:flex;align-items:center;gap:14px;margin-top:18px;}
+.pg{
+  width:34px;height:34px;border-radius:50%;cursor:pointer;padding:0;
+  font-size:14px;line-height:1;color:var(--lt);
+  background:transparent;border:1px solid var(--line-dark);
+  transition:border-color .15s ease,color .15s ease;
+}
+.pg:hover:not(:disabled){border-color:var(--orange);color:var(--orange);}
+.pg:disabled{opacity:.3;cursor:default;}
+.pg-at{font-family:var(--mono);font-size:12px;color:var(--lt-3);}
+
 /* ——— footer ——— */
 footer{background:var(--dark);color:var(--lt-2);padding:60px 0 52px;}
 footer p{
@@ -506,7 +545,8 @@ footer a:hover{color:var(--orange);}
 
 @media print{
   *,*::before,*::after{color:#000!important;background:#fff!important;text-shadow:none!important;box-shadow:none!important;}
-  .top,.cue,.btns,.card-go,.mapwrap,.menu-btn,.readmore,.info{display:none!important;}
+  .top,.cue,.btns,.card-go,.mapwrap,.menu-btn,.readmore,.info,.pager{display:none!important;}
+  .news li{display:flex!important;}
   .upcoming .note{display:block!important;position:static!important;width:auto!important;box-shadow:none!important;margin-top:10px;}
   .upcoming .note::after{display:none!important;}
   .letter{max-height:none!important;-webkit-mask-image:none!important;mask-image:none!important;}
@@ -961,6 +1001,81 @@ footer a:hover{color:var(--orange);}
 </main>
 
 <!-- ═══════════ FOOTER ═══════════ -->
+<section class="sec" id="news">
+  <div class="wrap">
+    <p class="label">flock in the news</p>
+    <h2>This isn't only happening here</h2>
+    <p class="dek">Reporting from outside North Canton, newest first. I didn't write any of it, and none of it is about our five cameras.</p>
+    <ul class="news">
+      <li><a href="https://www.techdirt.com/2026/08/10/its-official-flock-is-for-stalking/" target="_blank" rel="noopener noreferrer">
+        <span class="src">Techdirt</span>
+        <span class="hed">It's official: Flock is for stalking</span>
+        <span class="when">Aug 2026 ↗</span>
+      </a></li>
+      <li><a href="https://www.404media.co/own-the-narrative-leaked-flock-guide-shows-how-it-teaches-cops-to-promote-its-tech/" target="_blank" rel="noopener noreferrer">
+        <span class="src">404 Media</span>
+        <span class="hed">‘Own the Narrative’: leaked Flock guide shows how it coaches police to sell the tech to city councils</span>
+        <span class="when">Aug 2026 ↗</span>
+      </a></li>
+      <li><a href="https://www.malwarebytes.com/blog/news/2026/07/the-backlash-against-flock-cameras-is-spreading" target="_blank" rel="noopener noreferrer">
+        <span class="src">Malwarebytes</span>
+        <span class="hed">The backlash against Flock cameras is spreading</span>
+        <span class="when">Jul 2026 ↗</span>
+      </a></li>
+      <li><a href="https://www.aclu.org/campaigns-initiatives/get-the-flock-out" target="_blank" rel="noopener noreferrer">
+        <span class="src">ACLU</span>
+        <span class="hed">Fight Creepy ALPR Cameras</span>
+        <span class="when">Jun 2026 ↗</span>
+      </a></li>
+      <li><a href="https://www.404media.co/flock-leaked-cops-license-plate-searches-via-duckduckgo-bing/" target="_blank" rel="noopener noreferrer">
+        <span class="src">404 Media</span>
+        <span class="hed">Flock leaked cops' license plate searches via DuckDuckGo and Bing</span>
+        <span class="when">Jun 2026 ↗</span>
+      </a></li>
+      <li><a href="https://www.ktvu.com/news/class-action-lawsuit-alleges-flock-license-plate-readers-violate-ca-law-privacy-residents" target="_blank" rel="noopener noreferrer">
+        <span class="src">KTVU</span>
+        <span class="hed">Class action alleges Flock readers violate California privacy law</span>
+        <span class="when">Feb 2026 ↗</span>
+      </a></li>
+      <li><a href="https://www.npr.org/2026/02/17/nx-s1-5612825/flock-contracts-canceled-immigration-survillance-concerns" target="_blank" rel="noopener noreferrer">
+        <span class="src">NPR</span>
+        <span class="hed">Why some cities are canceling Flock license plate reader contracts</span>
+        <span class="when">Feb 2026 ↗</span>
+      </a></li>
+      <li><a href="https://www.404media.co/police-unmask-millions-of-surveillance-targets-because-of-flock-redaction-error/" target="_blank" rel="noopener noreferrer">
+        <span class="src">404 Media</span>
+        <span class="hed">Police unmask millions of surveillance targets because of a Flock redaction error</span>
+        <span class="when">Jan 2026 ↗</span>
+      </a></li>
+      <li><a href="https://www.eff.org/deeplinks/2025/12/effs-investigations-expose-flock-safetys-surveillance-abuses-2025-review" target="_blank" rel="noopener noreferrer">
+        <span class="src">EFF</span>
+        <span class="hed">EFF's investigations expose Flock Safety's surveillance abuses</span>
+        <span class="when">Dec 2025 ↗</span>
+      </a></li>
+      <li><a href="https://www.404media.co/flock-logins-exposed-in-malware-infections-senator-asks-ftc-to-investigate-the-company/" target="_blank" rel="noopener noreferrer">
+        <span class="src">404 Media</span>
+        <span class="hed">Flock logins exposed in malware infections; senator asks FTC to investigate</span>
+        <span class="when">Nov 2025 ↗</span>
+      </a></li>
+      <li><a href="https://www.404media.co/ice-secret-service-navy-all-had-access-to-flocks-nationwide-network-of-cameras/" target="_blank" rel="noopener noreferrer">
+        <span class="src">404 Media</span>
+        <span class="hed">ICE, Secret Service and the Navy all had access to Flock's nationwide camera network</span>
+        <span class="when">Oct 2025 ↗</span>
+      </a></li>
+      <li><a href="https://www.404media.co/congress-launches-investigation-into-flock-after-404-media-reporting/" target="_blank" rel="noopener noreferrer">
+        <span class="src">404 Media</span>
+        <span class="hed">Congress launches investigation into Flock</span>
+        <span class="when">Aug 2025 ↗</span>
+      </a></li>
+    </ul>
+    <div class="pager" hidden>
+      <button class="pg" type="button" data-dir="-1" aria-label="Previous stories">←</button>
+      <span class="pg-at" aria-live="polite">1 / 3</span>
+      <button class="pg" type="button" data-dir="1" aria-label="More stories">→</button>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
     <p class="foot-sig">Made by me, Joshua Sauder, who lives here in North Canton.</p>
@@ -1051,6 +1166,27 @@ document.querySelectorAll("[data-copy],[data-copy-from]").forEach(function(b){
   b.addEventListener("mouseenter",function(){set(true);});
   b.closest("li").addEventListener("mouseleave",function(){if(!b.matches(":focus"))set(false);});
   b.addEventListener("blur",function(){if(!b.closest("li").matches(":hover"))set(false);});
+})();
+(function(){
+  var items=[].slice.call(document.querySelectorAll(".news li"));
+  var pager=document.querySelector(".pager");
+  if(!items.length||!pager)return;
+  var per=4, pages=Math.ceil(items.length/per), at=0;
+  var at_=pager.querySelector(".pg-at");
+  var btns=[].slice.call(pager.querySelectorAll(".pg"));
+  var render=function(){
+    items.forEach(function(li,i){li.hidden=Math.floor(i/per)!==at;});
+    at_.textContent=(at+1)+" / "+pages;
+    btns[0].disabled=at===0; btns[1].disabled=at===pages-1;
+  };
+  btns.forEach(function(b){
+    b.addEventListener("click",function(){
+      at=Math.min(pages-1,Math.max(0,at+Number(b.dataset.dir)));
+      render();
+      document.querySelector(".news").scrollIntoView({block:"nearest"});
+    });
+  });
+  pager.hidden=false; render();
 })();
 window.addEventListener("beforeprint",function(){
   document.querySelectorAll(".faq details").forEach(function(d){
